@@ -9,9 +9,10 @@ function swap(nums, i, j) {
  * @param {*} nums 
  * @param {*} begin 
  * @param {*} end 
- * @param {*} n 分界位置，左边的小于等于nums[n]，右边的大于等于nums[n]
+ * @param {*} mid 分界位置，左边的小于等于nums[n]，右边的大于等于nums[n]
  */
-function quickSelect(nums, begin, end, n) {
+function quickSelect(nums, begin, end, mid) {
+    // i位置存储的值小于等于t
     let i = begin, j = begin, t = nums[end - 1];
     while (j < end) {
         if (nums[j] <= t) {
@@ -21,10 +22,10 @@ function quickSelect(nums, begin, end, n) {
         }
     }
     // i - 1为t值所在位置，i - 1左边的保证小于等于t，右边大于等于t
-    if (i - 1 > n) { // 当i - 1大于n时：从i - 1右侧元素肯定大于等于n；但左侧不能保证，因此需要对左侧继续遍历
-        quickSelect(nums, begin, i - 1, n);
-    } else if (i - 1 < n) { // 右侧需要继续遍历
-        quickSelect(nums, i, end, n);
+    if (i - 1 > mid) { // 当i - 1大于mid时：从i - 1右侧元素肯定大于等于mid；但左侧不能保证，因此需要对左侧继续遍历
+        quickSelect(nums, begin, i - 1, mid);
+    } else if (i - 1 < mid) { // 右侧需要继续遍历
+        quickSelect(nums, i, end, mid);
     }
 }
 

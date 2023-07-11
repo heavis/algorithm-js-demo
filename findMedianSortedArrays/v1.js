@@ -1,4 +1,6 @@
 /**
+ * 简单粗暴，先将两个数组合并，两个有序数组的合并也是归并排序中的一部分。然后根据奇数，还是偶数，返回中位数。
+ * https://leetcode.cn/problems/median-of-two-sorted-arrays/solutions/8999/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2/
  * @param {number[]} nums1
  * @param {number[]} nums2
  * @return {number}
